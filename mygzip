@@ -1,0 +1,16 @@
+#! /bin/sh
+
+curpath=`pwd`
+
+# judge the parameter
+if [ -x $1 ]
+then
+	exit 1
+else
+	echo $1
+fi
+file=$1
+for gzfiles in `ls ${file}*`
+do
+	echo $gzfiles
+done

@@ -1,0 +1,4 @@
+#! /bin/sh
+
+`sudo cp lib/tesla.zip /nb/nbserver/pylib/tesla.zip`
+`sbounce`

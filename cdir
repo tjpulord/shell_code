@@ -1,0 +1,16 @@
+#! /bin/sh
+
+cdpath=$1
+
+case $cdpath in
+'test') mypath='/usr/local/nb/nbserver/test/system/servlets/';;
+'log')  mypath='/var/log/nb';;
+'config') mypath='/usr/local/nb/nbserver/config';;
+'baseconfig') mypath='/usr/local/nb/nbserver/baseconfig';;
+*) echo "No such directory $cdpath";;
+esac
+
+cd $mypath
+curpath=`pwd`
+echo $curpath
+

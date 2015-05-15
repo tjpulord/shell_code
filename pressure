@@ -1,0 +1,19 @@
+#! /bin/sh
+
+#workpath='/home/lliu/p4/nbserver/nim/tesla/voltron5/feature_120131_vzw_7_2_0/test/system/servlets/test_metadata_source.py'
+workpath='/usr/local/nb/nbserver/test/system/servlets/test_metadata_source.py'
+if [ -x $1 ]
+then
+	iter=50
+else
+	iter=$1
+fi
+echo $iter
+for i in $(seq $iter); do
+	/nb/python/bin/python -O ${workpath}
+        echo -e "Iteration: ${i}\n"
+        echo -e "Iteration: ${i}\n" >> /home/lliu/memory_info.log
+	ps aux --sort=rss | grep metadata >> /home/lliu/memory_info.log
+	echo -e "\n\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n" >> /home/lliu/memory_info.log
+done
+

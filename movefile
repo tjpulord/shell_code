@@ -1,0 +1,5 @@
+#! /bin/sh
+
+`cp -f /home/lliu/bin/resolv.conf /etc/resolv.conf`
+`/etc/init.d/nscd restart`
+`/etc/init.d/named restart`
